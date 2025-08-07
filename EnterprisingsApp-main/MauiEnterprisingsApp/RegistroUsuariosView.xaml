@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontEnterprisingApp.RegistroUsuariosView">
+
+    <ScrollView>
+        <Grid x:Name="Contenedor" BackgroundColor="#404258" VerticalOptions="Start">
+            <Frame Margin="20" CornerRadius="20" BackgroundColor="#3E3E3E">
+                <VerticalStackLayout Spacing="20" Padding="20">
+                    <Label FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           Text="Registro de Usuarios"
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txtNombre"
+                           Placeholder="Nombre"
+                           Keyboard="Text"
+                           BackgroundColor="#505050"
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txtApellido"
+                           Placeholder="Apellido"
+                           Keyboard="Text"
+                           BackgroundColor="#505050"
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txtDireccion"
+                           Placeholder="Dirección"
+                           Keyboard="Text"
+                           BackgroundColor="#505050"
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txtTelefono"
+                           Placeholder="Teléfono"
+                           Keyboard="Telephone"
+                           BackgroundColor="#505050"
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txtCorreo"
+                           Placeholder="Correo Electrónico"
+                           Keyboard="Email"
+                           BackgroundColor="#505050"
+                           TextColor="#FFFFFF"/>
+                    <Entry x:Name="txtContraseña"
+                           Placeholder="Contraseña"
+                           IsPassword="True"
+                           BackgroundColor="#505050"
+                           TextColor="#FFFFFF"/>
+                    <Label Text="Seleccione el tipo de usuario"
+                           TextColor="#FFFFFF"/>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <CheckBox x:Name="chkAdmin" Color="#FFFFFF" CheckedChanged="CheckBox_CheckedChanged"/>
+                        <Label Text="Admin" TextColor="#FFFFFF" VerticalOptions="Center"/>
+                        <CheckBox x:Name="chkUsuario" Color="#FFFFFF" CheckedChanged="CheckBox_CheckedChanged"/>
+                        <Label Text="Usuario" TextColor="#FFFFFF" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <Button x:Name="btnRegistrarUsuario"
+                            Text="Registrar"
+                            BackgroundColor="#007BFF"
+                            TextColor="#FFFFFF"
+                            FontAttributes="Bold"
+                            CornerRadius="10"
+                            Clicked="btnRegistrar_Usuarios_clicked"/>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

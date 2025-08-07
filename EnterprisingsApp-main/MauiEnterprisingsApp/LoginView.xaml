@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiendaVideoJuegos.LoginView">
+
+    <Grid x:Name="Contenedor" VerticalOptions="FillAndExpand">
+        <ScrollView>
+            <VerticalStackLayout Spacing="20" Padding="20">
+                <Frame CornerRadius="20" BackgroundColor="#3E4053" Padding="20">
+                    <VerticalStackLayout Spacing="20">
+                        <Image Source="logo_app.png"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                               HorizontalOptions="Center"/>
+                        <Label FontAttributes="Bold"
+                               FontSize="24"
+                               HorizontalOptions="Center"
+                               Text="Inicio de Sesión"
+                               TextColor="#FFFFFF"/>
+                        <Label Text="Correo Electrónico"
+                               TextColor="#B0B0B0"/>
+                        <Frame BackgroundColor="#505364" CornerRadius="10" Padding="10">
+                            <Entry x:Name="txtCorreo"
+                                   Keyboard="Email"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#FFFFFF"
+                                   Placeholder="Introduce tu correo"
+                                   PlaceholderColor="#B0B0B0"/>
+                        </Frame>
+                        <Label Text="Contraseña"
+                               TextColor="#B0B0B0"/>
+                        <Frame BackgroundColor="#505364" CornerRadius="10" Padding="10">
+                            <Entry x:Name="txtPassword"
+                                   IsPassword="True"
+                                   Keyboard="Text"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#FFFFFF"
+                                   Placeholder="Introduce tu contraseña"
+                                   PlaceholderColor="#B0B0B0"/>
+                        </Frame>
+                        <Button x:Name="btnOlvideContrasena"
+                                Text="Olvidé mi contraseña"
+                                BackgroundColor="Transparent"
+                                TextColor="#1E88E5"
+                                FontAttributes="Bold"
+                                CornerRadius="10"
+                                Clicked="btnOlvideContrasena_Clicked"
+                                HorizontalOptions="Center"/>
+                        <Button x:Name="btnIngresar"
+                                Text="Ingresar"
+                                BackgroundColor="#1E88E5"
+                                TextColor="#FFFFFF"
+                                FontAttributes="Bold"
+                                CornerRadius="10"
+                                Clicked="btnIngresar_Clicked"
+                                HorizontalOptions="Center"/>
+                        <StackLayout Orientation="Horizontal"
+                                     VerticalOptions="End"
+                                     HorizontalOptions="Start"
+                                     Spacing="10"
+                                     Padding="20">
+                        <Button x:Name="btnActivarCuenta"
+                                    Text="Activar Cuenta"
+                                    BackgroundColor="#2A537E"
+                                    TextColor="#FFFFFF"
+                                    FontAttributes="Bold"
+                                    CornerRadius="10"
+                                    Clicked="btnActivarCuenta_Clicked"
+                                    FontSize="12"
+                                    HeightRequest="40"/>
+                        <Button x:Name="btnRegistrarse"
+                                    Text="Registrarse"
+                                    BackgroundColor="#2A537E"
+                                    TextColor="#FFFFFF"
+                                    FontAttributes="Bold"
+                                    CornerRadius="10"
+                                    Clicked="btnRegistrarse_Clicked"
+                                    FontSize="12"
+                                    HeightRequest="40"/>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Botones menos llamativos en la esquina inferior izquierda -->
+        
+    </Grid>
+</ContentPage>

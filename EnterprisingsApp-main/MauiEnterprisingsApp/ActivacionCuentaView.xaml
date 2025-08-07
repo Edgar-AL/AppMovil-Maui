@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEnterprisingsApp.ActivacionCuentaView">
+
+    <Grid x:Name="Contenedor" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <ScrollView>
+            <VerticalStackLayout Spacing="20" Padding="20" HorizontalOptions="CenterAndExpand">
+                <Label FontAttributes="Bold" FontSize="Large" Text="Activación de Cuenta" HorizontalOptions="Center"/>
+                <Label Text="Ingresa tu correo electrónico:" HorizontalOptions="Center" TextColor="#6C757D"/>
+                <Entry x:Name="txtCorreoElectronico" Placeholder="Correo Electrónico" Keyboard="Email" TextColor="#E9ECEF"/>
+                <Label Text="Ingresa el código de activación de 5 caracteres que recibiste por correo electrónico."
+                       HorizontalOptions="Center" TextColor="#6C757D"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                    <Frame BackgroundColor="#E9ECEF" CornerRadius="10" Padding="10">
+                        <Entry x:Name="entry1" MaxLength="1" Keyboard="Text" TextColor="#343A40" HorizontalTextAlignment="Center" TextChanged="OnEntryTextChanged"/>
+                    </Frame>
+                    <Frame BackgroundColor="#E9ECEF" CornerRadius="10" Padding="10">
+                        <Entry x:Name="entry2" MaxLength="1" Keyboard="Text" TextColor="#343A40" HorizontalTextAlignment="Center" TextChanged="OnEntryTextChanged"/>
+                    </Frame>
+                    <Frame BackgroundColor="#E9ECEF" CornerRadius="10" Padding="10">
+                        <Entry x:Name="entry3" MaxLength="1" Keyboard="Text" TextColor="#343A40" HorizontalTextAlignment="Center" TextChanged="OnEntryTextChanged"/>
+                    </Frame>
+                    <Frame BackgroundColor="#E9ECEF" CornerRadius="10" Padding="10">
+                        <Entry x:Name="entry4" MaxLength="1" Keyboard="Text" TextColor="#343A40" HorizontalTextAlignment="Center" TextChanged="OnEntryTextChanged"/>
+                    </Frame>
+                    <Frame BackgroundColor="#E9ECEF" CornerRadius="10" Padding="10">
+                        <Entry x:Name="entry5" MaxLength="1" Keyboard="Text" TextColor="#343A40" HorizontalTextAlignment="Center" TextChanged="OnEntryTextChanged"/>
+                    </Frame>
+                </StackLayout>
+                <Button Text="Activar Cuenta" Clicked="btnActivarCuenta_Clicked" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="10" HorizontalOptions="Center" WidthRequest="200"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

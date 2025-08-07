@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2B4D621-96C6-4355-9441-160ECB5B0F13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BackendEnterprisingsApp</RootNamespace>
+    <AssemblyName>BackendEnterprisingsApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDatos\conexionbd.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>conexionbd.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Entidades\Entidad\Categoria.cs" />
+    <Compile Include="Entidades\Entidad\HistorialPedido.cs" />
+    <Compile Include="Entidades\Entidad\ImagenProducto.cs" />
+    <Compile Include="Entidades\Entidad\Pedido.cs" />
+    <Compile Include="Entidades\Entidad\Producto.cs" />
+    <Compile Include="Entidades\Entidad\Reporte.cs" />
+    <Compile Include="Entidades\Entidad\Resena.cs" />
+    <Compile Include="Entidades\Entidad\TipoPago.cs" />
+    <Compile Include="Entidades\Entidad\TipoRetiro.cs" />
+    <Compile Include="Entidades\Entidad\TipoRol.cs" />
+    <Compile Include="Entidades\Entidad\Usuario.cs" />
+    <Compile Include="Entidades\Request\ReqActivacionCuenta.cs" />
+    <Compile Include="Entidades\Request\ReqActivarCategoria.cs" />
+    <Compile Include="Entidades\Request\ReqActivarProducto.cs" />
+    <Compile Include="Entidades\Request\ReqActivarTipoPago.cs" />
+    <Compile Include="Entidades\Request\ReqActivarTipoRetiro.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarCategoria.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarCodigoVerificacion.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarContrasenia.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarContraseñaOlvidada.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarEstadoPedido.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarImagen.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarPedidoUsuario.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarProducto.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarResena.cs" />
+    <Compile Include="Entidades\Request\ReqActualizarTipoRetiro.cs" />
+    <Compile Include="Entidades\Request\ReqActulizarTipoPago.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarCategoria.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarPedido.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarProducto.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarResena.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarTipoPago.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarTipoRetiro.cs" />
+    <Compile Include="Entidades\Request\ReqEliminarUsuario.cs" />
+    <Compile Include="Entidades\Request\ReqIngresarImagen.cs" />
+    <Compile Include="Entidades\Request\ReqIngresarPedido.cs" />
+    <Compile Include="Entidades\Request\ReqIngresarReporte.cs" />
+    <Compile Include="Entidades\Request\ReqIniciarSesion.cs" />
+    <Compile Include="Entidades\Request\ReqInsertarCategoria.cs" />
+    <Compile Include="Entidades\Request\ReqInsertarProducto.cs" />
+    <Compile Include="Entidades\Request\ReqInsertarResena.cs" />
+    <Compile Include="Entidades\Request\ReqInsertarTipoPago.cs" />
+    <Compile Include="Entidades\Request\ReqInsertarTipoRetiro.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerCategoria.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerHistorialPedidos.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerHistorialPedidosPorEmprendedor.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerImagen.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerPedidos.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerPedidosPorEmprendedor.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerProducto.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerProductosPorEmprendedor.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerReportes.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerResena.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerTipoPago.cs" />
+    <Compile Include="Entidades\Request\ReqObtenerTipoRetiro.cs" />
+    <Compile Include="Entidades\Request\ReqObtnerUsuarioPorCorreo.cs" />
+    <Compile Include="Entidades\Request\ReqRegistrarUsuario.cs" />
+    <Compile Include="Entidades\Response\ResActivacionCuenta.cs" />
+    <Compile Include="Entidades\Response\ResActivarCategoria.cs" />
+    <Compile Include="Entidades\Response\ResActivarProducto.cs" />
+    <Compile Include="Entidades\Response\ResActivarTipoPago.cs" />
+    <Compile Include="Entidades\Response\ResActivarTipoRetiro.cs" />
+    <Compile Include="Entidades\Response\ResActualizarCategoria.cs" />
+    <Compile Include="Entidades\Response\ResActualizarCodigoVerificacion.cs" />
+    <Compile Include="Entidades\Response\ResActualizarContrasenia.cs" />
+    <Compile Include="Entidades\Response\ResActualizarContraseñaOlvidada.cs" />
+    <Compile Include="Entidades\Response\ResActualizarEstadoPedido.cs" />
+    <Compile Include="Entidades\Response\ResActualizarImagen.cs" />
+    <Compile Include="Entidades\Response\ResActualizarPedidoUsuario.cs" />
+    <Compile Include="Entidades\Response\ResActualizarProducto.cs" />
+    <Compile Include="Entidades\Response\ResActualizarResena.cs" />
+    <Compile Include="Entidades\Response\ResActualizarTipoPago.cs" />
+    <Compile Include="Entidades\Response\ResActualizarTipoRetiro.cs" />
+    <Compile Include="Entidades\Response\ResBase.cs" />
+    <Compile Include="Entidades\Response\ResEliminarCategoria.cs" />
+    <Compile Include="Entidades\Response\ResEliminarPedido.cs" />
+    <Compile Include="Entidades\Response\ResEliminarProducto.cs" />
+    <Compile Include="Entidades\Response\ResEliminarResena.cs" />
+    <Compile Include="Entidades\Response\ResEliminarTipoPago.cs" />
+    <Compile Include="Entidades\Response\ResEliminarTipoRetiro.cs" />
+    <Compile Include="Entidades\Response\ResEliminarUsuario.cs" />
+    <Compile Include="Entidades\Response\ResIngresarImagen.cs" />
+    <Compile Include="Entidades\Response\ResIngresarPedido.cs" />
+    <Compile Include="Entidades\Response\ResIngresarReporte.cs" />
+    <Compile Include="Entidades\Response\ResIniciarSesion.cs" />
+    <Compile Include="Entidades\Response\ResInsertarCategoria.cs" />
+    <Compile Include="Entidades\Response\ResInsertarProducto.cs" />
+    <Compile Include="Entidades\Response\ResInsertarResena.cs" />
+    <Compile Include="Entidades\Response\ResInsertarTipoPago.cs" />
+    <Compile Include="Entidades\Response\ResInsertarTipoRetiro.cs" />
+    <Compile Include="Entidades\Response\ResObtenerCategoria.cs" />
+    <Compile Include="Entidades\Response\ResObtenerHistorialPedidos.cs" />
+    <Compile Include="Entidades\Response\ResObtenerHistorialPedidosPorEmprendedor.cs" />
+    <Compile Include="Entidades\Response\ResObtenerImagen.cs" />
+    <Compile Include="Entidades\Response\ResObtenerPedidos.cs" />
+    <Compile Include="Entidades\Response\ResObtenerPedidosPorEmprendedor.cs" />
+    <Compile Include="Entidades\Response\ResObtenerProducto.cs" />
+    <Compile Include="Entidades\Response\ResObtenerProductosPorEmprendedor.cs" />
+    <Compile Include="Entidades\Response\ResObtenerReportes.cs" />
+    <Compile Include="Entidades\Response\ResObtenerResena.cs" />
+    <Compile Include="Entidades\Response\ResObtenerTipoPago.cs" />
+    <Compile Include="Entidades\Response\ResObtenerTipoRetiro.cs" />
+    <Compile Include="Entidades\Response\ResObtenerUsuarioPorCorreo.cs" />
+    <Compile Include="Entidades\Response\ResRegistrarUsuario.cs" />
+    <Compile Include="Logica\LogActivacionCuenta.cs" />
+    <Compile Include="Logica\LogCategoria.cs" />
+    <Compile Include="Logica\LogEncriptacion.cs" />
+    <Compile Include="Logica\LogHistorialPedidos.cs" />
+    <Compile Include="Logica\LogImagenProducto.cs" />
+    <Compile Include="Logica\LogIniciarSesion.cs" />
+    <Compile Include="Logica\LogPedido.cs" />
+    <Compile Include="Logica\LogProducto.cs" />
+    <Compile Include="Logica\LogReporte.cs" />
+    <Compile Include="Logica\LogResena.cs" />
+    <Compile Include="Logica\LogTipoPago.cs" />
+    <Compile Include="Logica\LogTipoRetiro.cs" />
+    <Compile Include="Logica\LogUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utilitarios\Utilitarios.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="AccesoDatos\conexionbd.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>conexionbd.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AccesoDatos\conexionbd.dbml.layout">
+      <DependentUpon>conexionbd.dbml</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

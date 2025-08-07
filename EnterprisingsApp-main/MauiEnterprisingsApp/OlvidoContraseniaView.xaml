@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEnterprisingsApp.OlvidoContraseniaView">
+
+    <Grid x:Name="Contenedor" VerticalOptions="FillAndExpand">
+        <ScrollView>
+            <VerticalStackLayout Spacing="20" Padding="20">
+                <Frame CornerRadius="20" BackgroundColor="#3E4053" Padding="20">
+                    <VerticalStackLayout Spacing="20">
+                        <Image Source="logo_app.png"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                               HorizontalOptions="Center"/>
+                        <Label FontAttributes="Bold"
+                               FontSize="24"
+                               HorizontalOptions="Center"
+                               Text="Cambiar Contraseña"
+                               TextColor="#FFFFFF"/>
+                        <Label Text="Correo Electrónico"
+                               TextColor="#B0B0B0"/>
+                        <Frame BackgroundColor="#505364" CornerRadius="10" Padding="10">
+                            <Entry x:Name="txtCorreo"
+                                   Keyboard="Email"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#FFFFFF"
+                                   Placeholder="Introduce tu correo"
+                                   PlaceholderColor="#B0B0B0"/>
+                        </Frame>
+                        <Button x:Name="btnSolicitarCodigo"
+                                Text="Solicitar Código de Verificación"
+                                BackgroundColor="#1E88E5"
+                                TextColor="#FFFFFF"
+                                FontAttributes="Bold"
+                                CornerRadius="10"
+                                Clicked="btnSolicitarCodigo_Clicked"
+                                HorizontalOptions="Center"/>
+
+                        <!-- Contenedor oculto para los campos adicionales -->
+                        <StackLayout x:Name="contenedorCamposAdicionales" IsVisible="False" Spacing="20">
+                            <Label Text="Código de Verificación"
+                                   TextColor="#B0B0B0"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                                <Frame BackgroundColor="#505364" CornerRadius="10" Padding="5">
+                                    <Entry x:Name="code1"
+                                           MaxLength="1"
+                                           Keyboard="Text"
+                                           BackgroundColor="Transparent"
+                                           TextColor="#FFFFFF"
+                                           HorizontalTextAlignment="Center"
+                                           TextChanged="OnCodeTextChanged"/>
+                                </Frame>
+                                <Frame BackgroundColor="#505364" CornerRadius="10" Padding="5">
+                                    <Entry x:Name="code2"
+                                           MaxLength="1"
+                                           Keyboard="Text"
+                                           BackgroundColor="Transparent"
+                                           TextColor="#FFFFFF"
+                                           HorizontalTextAlignment="Center"
+                                           TextChanged="OnCodeTextChanged"/>
+                                </Frame>
+                                <Frame BackgroundColor="#505364" CornerRadius="10" Padding="5">
+                                    <Entry x:Name="code3"
+                                           MaxLength="1"
+                                           Keyboard="Text"
+                                           BackgroundColor="Transparent"
+                                           TextColor="#FFFFFF"
+                                           HorizontalTextAlignment="Center"
+                                           TextChanged="OnCodeTextChanged"/>
+                                </Frame>
+                                <Frame BackgroundColor="#505364" CornerRadius="10" Padding="5">
+                                    <Entry x:Name="code4"
+                                           MaxLength="1"
+                                           Keyboard="Text"
+                                           BackgroundColor="Transparent"
+                                           TextColor="#FFFFFF"
+                                           HorizontalTextAlignment="Center"
+                                           TextChanged="OnCodeTextChanged"/>
+                                </Frame>
+                                <Frame BackgroundColor="#505364" CornerRadius="10" Padding="5">
+                                    <Entry x:Name="code5"
+                                           MaxLength="1"
+                                           Keyboard="Text"
+                                           BackgroundColor="Transparent"
+                                           TextColor="#FFFFFF"
+                                           HorizontalTextAlignment="Center"
+                                           TextChanged="OnCodeTextChanged"/>
+                                </Frame>
+                            </StackLayout>
+                            <Label Text="Nueva Contraseña"
+                                   TextColor="#B0B0B0"/>
+                            <Frame BackgroundColor="#505364" CornerRadius="10" Padding="10">
+                                <Entry x:Name="txtNuevaContrasena"
+                                       IsPassword="True"
+                                       Keyboard="Text"
+                                       BackgroundColor="Transparent"
+                                       TextColor="#FFFFFF"
+                                       Placeholder="Introduce tu nueva contraseña"
+                                       PlaceholderColor="#B0B0B0"/>
+                            </Frame>
+                            <Button x:Name="btnModificarContrasena"
+                                    Text="Modificar Contraseña"
+                                    BackgroundColor="#1E88E5"
+                                    TextColor="#FFFFFF"
+                                    FontAttributes="Bold"
+                                    CornerRadius="10"
+                                    Clicked="btnModificarContrasena_Clicked"
+                                    HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

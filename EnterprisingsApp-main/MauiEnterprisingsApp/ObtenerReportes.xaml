@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEnterprisingsApp.ObtenerReportes"
+             Title="ObtenerReportes">
+    <CollectionView SelectionMode="Multiple"
+                    ItemsSource="{Binding listaReportes}">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame Margin="10"
+                       Padding="10"
+                       BorderColor="#ccc"
+                       CornerRadius="5"
+                       HasShadow="True"
+                       BackgroundColor="White">
+
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Fecha de reporte en la esquina superior derecha -->
+                        <Label x:Name="lblFechaReporte"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               FontSize="12"
+                               TextColor="#888"
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Start"
+                               Text="{Binding fechaReporte}"/>
+
+                        <!-- Nombre y apellidos en una sola línea -->
+                        <Label x:Name="lblNombreCompleto"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               FontSize="15"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               Text="{Binding nombreCompleto}"/>
+
+                        <!-- Correo en cursiva -->
+                        <Label x:Name="lblCorreoUsuario"
+                               Grid.Row="2"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               FontSize="14"
+                               FontAttributes="Italic"
+                               TextColor="#555"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               Text="{Binding correoUsuario}"/>
+
+                        <!-- Texto "Reporte:" -->
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="#000"
+                               Text="Reporte:"/>
+
+                        <!-- Descripción del reporte -->
+                        <Label x:Name="lblDescripcionReporte"
+                               Grid.Row="4"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               FontSize="14"
+                               TextColor="#333"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Start"
+                               Text="{Binding descripcionReporte}"
+                               Margin="0,10,0,0"/>
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

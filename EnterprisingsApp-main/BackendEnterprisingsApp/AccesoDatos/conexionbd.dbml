@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bdEnterprisingApp" Class="conexionbdDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JAFET\SQLEXPRESS;Initial Catalog=bdEnterprisingApp;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BackendEnterprisingsApp.Properties.Settings" SettingsPropertyName="bdEnterprisingAppConnectionString2" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.SP_ACTUALIZAR_IMAGEN" Method="SP_ACTUALIZAR_IMAGEN">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_IMAGEN" Parameter="nOMBRE_IMAGEN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RUTA_IMAGEN" Parameter="rUTA_IMAGEN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_IMAGEN" Method="SP_INSERTAR_IMAGEN">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_IMAGEN" Parameter="nOMBRE_IMAGEN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="RUTA_IMAGEN" Parameter="rUTA_IMAGEN" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_REPORTE" Method="SP_INSERTAR_REPORTE">
+    <Parameter Name="ID_USUARIO_REPORTADO" Parameter="iD_USUARIO_REPORTADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DESCRIPCION_REPORTE" Parameter="dESCRIPCION_REPORTE" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_REPORTES" Method="SP_OBTENER_REPORTES">
+    <ElementType Name="SP_OBTENER_REPORTESResult">
+      <Column Name="ID_REPORTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APELLIDOS_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FECHA_REPORTE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DESCRIPCION_REPORTE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_IMAGENES_PRODUCTO" Method="SP_OBTENER_IMAGENES_PRODUCTO">
+    <ElementType Name="SP_OBTENER_IMAGENES_PRODUCTOResult">
+      <Column Name="ID_IMAGEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_IMAGEN" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RUTA_IMAGEN" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_USUARIO" Method="SP_INGRESAR_USUARIO">
+    <Parameter Name="ID_TIPOROL" Parameter="iD_TIPOROL" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_USUARIO" Parameter="nOMBRE_USUARIO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="APELLIDOS_USUARIO" Parameter="aPELLIDOS_USUARIO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DIRECCION" Parameter="dIRECCION" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="TELEFONO" Parameter="tELEFONO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CONTRASENA" Parameter="cONTRASENA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NUMERO_VERIFICACION" Parameter="nUMERO_VERIFICACION" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MARCA_TIEMPO_VERIFICACION" Parameter="mARCA_TIEMPO_VERIFICACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ACTIVO" Parameter="aCTIVO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_NUMERO_VERIFICACION_POR_CORREO" Method="SP_OBTENER_NUMERO_VERIFICACION_POR_CORREO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="NUMERO_VERIFICACION" Parameter="nUMERO_VERIFICACION" Type="System.String" DbType="VarChar(6)" Direction="InOut" />
+    <Parameter Name="MARCA_TIEMPO_VERIFICACION" Parameter="mARCA_TIEMPO_VERIFICACION" Type="System.DateTime" DbType="DateTime" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_USUARIO" Method="SP_ACTUALIZAR_USUARIO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NUEVO_NOMBRE" Parameter="nUEVO_NOMBRE" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NUEVO_APELLIDO" Parameter="nUEVO_APELLIDO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NUEVA_DIRECCION" Parameter="nUEVA_DIRECCION" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="NUEVO_TELEFONO" Parameter="nUEVO_TELEFONO" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_VALIDAR_CONTRASENA" Method="SP_VALIDAR_CONTRASENA">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CONTRASENA" Parameter="cONTRASENA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_CONTRASENA_USUARIO" Method="SP_ACTUALIZAR_CONTRASENA_USUARIO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NUEVA_CONTRASENA" Parameter="nUEVA_CONTRASENA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_USUARIO_POR_CORREO" Method="SP_OBTENER_USUARIO_POR_CORREO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NOMBRE_USUARIO" Parameter="nOMBRE_USUARIO" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="APELLIDOS_USUARIO" Parameter="aPELLIDOS_USUARIO" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="DIRECCION" Parameter="dIRECCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TELEFONO" Parameter="tELEFONO" Type="System.String" DbType="NVarChar(50)" Direction="InOut" />
+    <Parameter Name="NOMBRE_TIPOROL" Parameter="nOMBRE_TIPOROL" Type="System.String" DbType="NVarChar(50)" Direction="InOut" />
+    <Parameter Name="ACTIVO" Parameter="aCTIVO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_USUARIO_POR_CORREOResult">
+      <Column Name="NOMBRE_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APELLIDOS_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOMBRE_TIPOROL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_ACTIVO_POR_CORREO" Method="SP_OBTENER_ACTIVO_POR_CORREO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="ACTIVO" Parameter="aCTIVO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_USUARIO_POR_CORREO" Method="SP_OBTENER_USUARIO_POR_CORREO1">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NOMBRE_USUARIO" Parameter="nOMBRE_USUARIO" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="APELLIDOS_USUARIO" Parameter="aPELLIDOS_USUARIO" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="DIRECCION" Parameter="dIRECCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="TELEFONO" Parameter="tELEFONO" Type="System.String" DbType="NVarChar(50)" Direction="InOut" />
+    <Parameter Name="NOMBRE_TIPOROL" Parameter="nOMBRE_TIPOROL" Type="System.String" DbType="NVarChar(50)" Direction="InOut" />
+    <Parameter Name="ACTIVO" Parameter="aCTIVO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_USUARIO_POR_CORREOResult1">
+      <Column Name="NOMBRE_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APELLIDOS_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOMBRE_TIPOROL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ACTIVAR_USUARIO" Method="SP_ACTIVAR_USUARIO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NUMERO_VERIFICACION" Parameter="nUMERO_VERIFICACION" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="TIEMPO_VERIFICACION" Parameter="tIEMPO_VERIFICACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_CODIGO_VERIFICACION" Method="SP_ACTUALIZAR_CODIGO_VERIFICACION">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NUMERO_VERIFICACION" Parameter="nUMERO_VERIFICACION" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="MARCA_TIEMPO_VERIFICACION" Parameter="mARCA_TIEMPO_VERIFICACION" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_USUARIO" Method="SP_ELIMINAR_USUARIO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CONTRASENA" Parameter="cONTRASENA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_BITACORA" Method="SP_INSERTAR_BITACORA">
+    <Parameter Name="CLASE" Parameter="cLASE" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="METODO" Parameter="mETODO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="TIPO" Parameter="tIPO" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="REQUEST" Parameter="rEQUEST" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RESPONSE" Parameter="rESPONSE" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_RESENA" Method="SP_INGRESAR_RESENA">
+    <Parameter Name="ID_RESENA" Parameter="iD_RESENA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VALORACION" Parameter="vALORACION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RESENA" Parameter="rESENA" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_RESENA" Method="SP_ACTUALIZAR_RESENA">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_RESENA" Parameter="iD_RESENA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="VALORACION" Parameter="vALORACION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RESENA" Parameter="rESENA" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_RESENA" Method="SP_ELIMINAR_RESENA">
+    <Parameter Name="ID_RESENA" Parameter="iD_RESENA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_RESENA" Method="SP_OBTENER_RESENA">
+    <ElementType Name="SP_OBTENER_RESENAResult">
+      <Column Name="ID_RESENA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOMBRE_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APELLIDOS_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VALORACION" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RESENA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_TIPO_PAGO" Method="SP_INGRESAR_TIPO_PAGO">
+    <Parameter Name="NOMBRE_PAGO" Parameter="nOMBRE_PAGO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_TIPO_RETIRO" Method="SP_INGRESAR_TIPO_RETIRO">
+    <Parameter Name="NOMBRE_RETIRO" Parameter="nOMBRE_RETIRO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_TIPO_PAGO" Method="SP_ELIMINAR_TIPO_PAGO">
+    <Parameter Name="ID_TIPOPAGO" Parameter="iD_TIPOPAGO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_TIPO_RETIRO" Method="SP_ELIMINAR_TIPO_RETIRO">
+    <Parameter Name="ID_TIPORETIRO" Parameter="iD_TIPORETIRO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_TIPO_PAGO" Method="SP_ACTUALIZAR_TIPO_PAGO">
+    <Parameter Name="ID_TIPOPAGO" Parameter="iD_TIPOPAGO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_PAGO" Parameter="nOMBRE_PAGO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_TIPO_RETIRO" Method="SP_ACTUALIZAR_TIPO_RETIRO">
+    <Parameter Name="ID_TIPORETIRO" Parameter="iD_TIPORETIRO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_RETIRO" Parameter="nOMBRE_RETIRO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTIVAR_TIPO_PAGO" Method="SP_ACTIVAR_TIPO_PAGO">
+    <Parameter Name="ID_TIPOPAGO" Parameter="iD_TIPOPAGO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTIVAR_TIPO_RETIRO" Method="SP_ACTIVAR_TIPO_RETIRO">
+    <Parameter Name="ID_TIPORETIRO" Parameter="iD_TIPORETIRO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_TIPO_PAGO" Method="SP_OBTENER_TIPO_PAGO">
+    <ElementType Name="SP_OBTENER_TIPO_PAGOResult">
+      <Column Name="ID_TIPOPAGO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PAGO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_TIPO_RETIRO" Method="SP_OBTENER_TIPO_RETIRO">
+    <ElementType Name="SP_OBTENER_TIPO_RETIROResult">
+      <Column Name="ID_TIPORETIRO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_RETIRO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ACTIVAR_CATEGORIA" Method="SP_ACTIVAR_CATEGORIA">
+    <Parameter Name="ID_CATEGORIA" Parameter="iD_CATEGORIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_CATEGORIA" Method="SP_ACTUALIZAR_CATEGORIA">
+    <Parameter Name="ID_CATEGORIA" Parameter="iD_CATEGORIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_CATEGORIA" Parameter="nOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_CATEGORIA" Method="SP_ELIMINAR_CATEGORIA">
+    <Parameter Name="ID_CATEGORIA" Parameter="iD_CATEGORIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_PRODUCTO" Method="SP_ELIMINAR_PRODUCTO">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_CATEGORIA" Method="SP_INGRESAR_CATEGORIA">
+    <Parameter Name="NOMBRE_CATEGORIA" Parameter="nOMBRE_CATEGORIA" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_CATEGORIA" Method="SP_OBTENER_CATEGORIA">
+    <ElementType Name="SP_OBTENER_CATEGORIAResult">
+      <Column Name="ID_CATEGORIA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_CATEGORIA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_PRODUCTO" Method="SP_OBTENER_PRODUCTO">
+    <ElementType Name="SP_OBTENER_PRODUCTOResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CATEGORIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ACTIVAR_PRODUCTO" Method="SP_ACTIVAR_PRODUCTO">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_VERIFICAR_CORREO_Y_OBTENER_CONTRASENA" Method="SP_VERIFICAR_CORREO_Y_OBTENER_CONTRASENA">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="CONTRASENA" Parameter="cONTRASENA" Type="System.String" DbType="VarChar(MAX)" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_CONTRASENA_USUARIO_OLVIDADA" Method="SP_ACTUALIZAR_CONTRASENA_USUARIO_OLVIDADA">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="NUMERO_VERIFICACION" Parameter="nUMERO_VERIFICACION" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="NUEVA_CONTRASENA" Parameter="nUEVA_CONTRASENA" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_ESTADO_PEDIDO" Method="SP_ACTUALIZAR_ESTADO_PEDIDO">
+    <Parameter Name="ID_PEDIDO" Parameter="iD_PEDIDO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NUEVO_ESTADO" Parameter="nUEVO_ESTADO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_PEDIDO_USUARIO" Method="SP_ACTUALIZAR_PEDIDO_USUARIO">
+    <Parameter Name="ID_PEDIDO" Parameter="iD_PEDIDO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_TIPOPAGO" Parameter="iD_TIPOPAGO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_TIPORETIRO" Parameter="iD_TIPORETIRO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CANTIDAD" Parameter="cANTIDAD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OBSERVACIONES" Parameter="oBSERVACIONES" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_PRODUCTO" Method="SP_INGRESAR_PRODUCTO">
+    <Parameter Name="ID_CATEGORIA" Parameter="iD_CATEGORIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_EMPRENDEDOR" Parameter="iD_EMPRENDEDOR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_PRODUCTO" Parameter="nOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ACTIVO" Parameter="aCTIVO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_PEDIDO" Method="SP_INGRESAR_PEDIDO">
+    <Parameter Name="ID_CLIENTE" Parameter="iD_CLIENTE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_EMPRENDEDOR" Parameter="iD_EMPRENDEDOR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_TIPOPAGO" Parameter="iD_TIPOPAGO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_TIPORETIRO" Parameter="iD_TIPORETIRO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CANTIDAD" Parameter="cANTIDAD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="OBSERVACIONES" Parameter="oBSERVACIONES" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_PEDIDOS" Method="SP_OBTENER_PEDIDOS">
+    <ElementType Name="SP_OBTENER_PEDIDOSResult">
+      <Column Name="ID_PEDIDO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[NOMBRE CLIENTE]" Member="NOMBRE_CLIENTE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[APELLIDOS CLIENTE]" Member="APELLIDOS_CLIENTE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOMBRE_PAGO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE_RETIRO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FECHA_PEDIDO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CANTIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_PRODUCTO" Method="SP_OBTENER_PRODUCTO1">
+    <ElementType Name="SP_OBTENER_PRODUCTOResult1">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CATEGORIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="APELLIDOS_USUARIO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_HISTORIAL_PEDIDOS" Method="SP_OBTENER_HISTORIAL_PEDIDOS">
+    <ElementType Name="SP_OBTENER_HISTORIAL_PEDIDOSResult">
+      <Column Name="ID_HISTORIAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PEDIDO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ESTADO_PEDIDO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[FECHA ACTUALIZACION]" Member="FECHA_ACTUALIZACION" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ELIMINAR_PEDIDO" Method="SP_ELIMINAR_PEDIDO">
+    <Parameter Name="ID_PEDIDO" Parameter="iD_PEDIDO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_OBTENER_PRODUCTOS_EMPRENDEDOR" Method="SP_OBTENER_PRODUCTOS_EMPRENDEDOR1">
+    <Parameter Name="ID_EMPRENDEDOR" Parameter="iD_EMPRENDEDOR" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_OBTENER_PRODUCTOS_EMPRENDEDORResult1">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CATEGORIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_EMPRENDEDOR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_HISTORIAL_PEDIDOS_EMPRENDEDOR" Method="SP_OBTENER_HISTORIAL_PEDIDOS_EMPRENDEDOR">
+    <Parameter Name="ID_EMPRENDEDOR" Parameter="iD_EMPRENDEDOR" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_OBTENER_HISTORIAL_PEDIDOS_EMPRENDEDORResult">
+      <Column Name="ID_HISTORIAL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PEDIDO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ESTADO_PEDIDO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[FECHA ACTUALIZACION]" Member="FECHA_ACTUALIZACION" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_PEDIDOS_EMPRENDEDOR" Method="SP_OBTENER_PEDIDOS_EMPRENDEDOR">
+    <Parameter Name="ID_EMPRENDEDOR" Parameter="iD_EMPRENDEDOR" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_OBTENER_PEDIDOS_EMPRENDEDORResult">
+      <Column Name="ID_PEDIDO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[NOMBRE CLIENTE]" Member="NOMBRE_CLIENTE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[APELLIDOS CLIENTE]" Member="APELLIDOS_CLIENTE" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOMBRE_PAGO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NOMBRE_RETIRO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FECHA_PEDIDO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CANTIDAD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ACTUALIZAR_PRODUCTO" Method="SP_ACTUALIZAR_PRODUCTO">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_CATEGORIA" Parameter="iD_CATEGORIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE_PRODUCTO" Parameter="nOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ACTIVO" Parameter="aCTIVO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
